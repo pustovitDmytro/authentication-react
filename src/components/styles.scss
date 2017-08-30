@@ -1,0 +1,17 @@
+$background: #ffffff;
+$phone: "screen and (max-device-width: 889px)";
+$pc: "screen and (min-device-width: 890px)";
+$small-pc: "screen and (min-device-width: 890px) and (max-device-width: 1999px)";
+$big-pc: "screen and (min-device-width: 2000px)";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button{
+  cursor: pointer;
+}
+body{
+  background-color: $background;
+}

@@ -1,0 +1,37 @@
+@import "../styles.scss";
+
+.container{
+  width: 100vw;
+  min-height: 100vh;
+  padding: 30px;
+  @media #{$phone}{
+    padding: 10px;
+  }
+}
+.cards{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @media #{$pc}{
+    justify-content: space-around;
+  }
+  @media #{$phone}{
+    flex-direction: column;
+  }
+}
+.card{
+  margin: 15px 5px;
+  @media #{$phone}{
+    flex-direction: column;
+    margin: 10px 0;
+    width: 100%;
+  }
+  @media #{$small-pc}{
+    flex-direction: column;
+    width: 45%;
+  }
+  @media #{$big-pc}{
+    flex-direction: column;
+    width: 22%;
+  }
+}

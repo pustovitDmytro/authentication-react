@@ -1,0 +1,20 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+.title{
+  font-size: 3rem;
+}
+.description{
+  font-size: 2rem;
+  width: 60%;
+  margin: 20px auto;
+}
+.robot{
+  height: 50%;
+}
