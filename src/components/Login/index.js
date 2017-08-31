@@ -12,7 +12,7 @@ import s from './Login.scss';
 import {authenticate} from '../../actions/change.api';
 import {getMenu} from '../../actions/load.api';
 import show from '../../actions/set.message';
-import setUser from '../../actions/set.user';
+import {setUser,setToken} from '../../actions/set.user';
 
 class Login extends React.Component {
     constructor(props) {
@@ -34,15 +34,21 @@ class Login extends React.Component {
     }
     submit(model) {
         const {dispatch} = this.props;
-        dispatch(authenticate(model))
-            .then(data=>{
-                dispatch(show(data.message))
-                if(data.success){
-                    console.log(data.username,data.token);
-                    dispatch(setUser(data.username,data.token));
-                    dispatch(getMenu());
-                }
-            });
+        dispatch(setUser()).then(
+            dispatch(authenticate(model))
+                .then(data=>{
+                    dispatch(show(data.message));
+                    if(data.success){
+                        sessionStorage.setItem('jwt', data.token);
+                        dispatch(getMenu())
+                            .then(payload=> {
+                                    dispatch(setUser(data.username))
+                                    dispatch(show(''));
+                                }
+                            )
+                    }
+                })
+        );
     }
     render() {
         return (
@@ -57,17 +63,17 @@ class Login extends React.Component {
                         validations={{
                             matchRegexp: validators.name
                         }}
-                        placeholder={"Film title"}
-                        hint="Type"
+                        placeholder="Login"
+                        hint="Type here"
                         required/>
                     <Input
                         type="password"
                         name="password"
-                        hint="Type"
+                        hint="Type here"
                         validations={{
                             matchRegexp: validators.password
                         }}
-                        placeholder={"Format"}
+                        placeholder={"Password"}
                         required/>
                     <RaisedButton
                         label="Submit"

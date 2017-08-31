@@ -1,11 +1,11 @@
 /**
  * Created by pusti on 31.08.2017.
  */
-const set = (user,token) => dispatch=> {
-    dispatch({
-        type: 'SET_USER',
-        user,
+export const setUser = (user) => dispatch =>
+    new Promise((resolve, reject)=>{
+        dispatch({
+            type: 'SET_USER',
+            user,
+        });
+        resolve(user);
     });
-    sessionStorage.setItem('jwt', token);
-};
-export default set;

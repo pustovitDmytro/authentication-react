@@ -12,9 +12,12 @@ const load = (API) =>
             return API[method].call(API, {token})
                 .then(response => response.json())
                 .then(payload =>
-                    dispatch({
-                        type,
-                        payload
+                    new Promise((resolve, reject)=> {
+                        dispatch({
+                            type,
+                            payload
+                        })
+                        resolve(payload);
                     })
                 )
                 .catch(error => {

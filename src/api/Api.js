@@ -16,7 +16,6 @@ class Api {
     });
   }
   get(url, {token}) {
-    console.log(token);
     return this.fetch(this.domain + '/' + url, {
       method: 'GET',
       headers: new Headers({'Authorization': token})

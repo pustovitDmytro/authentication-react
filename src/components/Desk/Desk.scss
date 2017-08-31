@@ -8,30 +8,26 @@
     padding: 10px;
   }
 }
-.cards{
-  display:flex;
-  flex-wrap: wrap;
-  align-items: center;
-  @media #{$pc}{
-    justify-content: space-around;
-  }
+.main{
+  display: flex;
   @media #{$phone}{
-    flex-direction: column;
+    flex-direction: row;
   }
+  padding:10px;
 }
-.card{
-  margin: 15px 5px;
-  @media #{$phone}{
-    flex-direction: column;
-    margin: 10px 0;
-    width: 100%;
-  }
-  @media #{$small-pc}{
-    flex-direction: column;
-    width: 45%;
-  }
-  @media #{$big-pc}{
-    flex-direction: column;
-    width: 22%;
-  }
+.menu{
+   @media #{$pc}{
+     max-width:300px;
+   }
+   width: 100%;
+  height:100%;
+ }
+.content{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected{
+  color:red;
 }

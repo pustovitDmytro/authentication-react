@@ -1,7 +1,0 @@
-@import "../styles.scss";
-
-.hidemobile{
-  @media #{$phone}{
-    display: none !important;
-  }
-}
