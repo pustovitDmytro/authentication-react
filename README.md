@@ -4,6 +4,7 @@ react-redux SPA
 ## How to Install:
 To install and launch project run theese commands in console:
 ```
+yarn install
 yarn assemble
 yarn start:http-server
 ```
