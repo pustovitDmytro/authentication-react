@@ -1,5 +1,5 @@
 # authentication-react
-react-redux SPA with drag and drop integration
+react SPA with jwt authentication
 test assignment for taking Web-developer position at [astarta](http://www.astartaholding.com/) company.
 
 ## Table of Contents
