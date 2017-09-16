@@ -76,6 +76,10 @@ $ yarn start:watch
 ```
 4. Of course you can mix these variants
 
+## Boilerplate
+
+To read more about `webpack.config` and project-structure check docs of used [boilerplate](https://github.com/pustovitDmytro/react).
+
 ## Task 
 
 Разработать веб-приложение, состоящее из серверной части (NodeJs, Express) и клиентского приложения (React, Router)
